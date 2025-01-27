@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    <h3 style = "background-color: rgb(75, 158, 217);">Boolean values</h3>
+    <p>A boolean value represents whether something is true or false</p>
+    <script>
+        true;
+        false;
+        console.log(3>2); // true
+        console.log(typeof true); // boolean
+
+        console.log(5 == '5.00'); //true
+        // only the value is compared
+        console.log(5 === '5.00'); // false
+        // the value and the type are compared
+
+        console.log(5 != '5.00'); // false
+        console.log(5 !== '5.00'); // true
+
+        // if statements:
+        /*
+        -lets us write multiple groups of code and only run the code that meets the condition
+        */
+
+        if(true){
+            console.log('this is true');
+        }
+        if(false){
+            console.log('this is true');
+        }
+        // if else statement
+        if(false){
+            console.log('this is true');
+        } else {
+            console.log('this is false');
+            }
+
+        // WAP to check if someone is eligible to drive
+        let age = 18;
+        if(age >= 18){
+            console.log('You are eligible to drive');
+        } else {
+            console.log('You are not eligible to drive');
+        }
+    </script>
+</body>
+</html>
