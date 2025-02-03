@@ -9,20 +9,8 @@
     <h3>Rock Paper Scissors</h3>
 
     <button onclick = "
-        randomNumber = Math.random();
-        let ComputerMove = '';
-        // generates a random number between 0 and 1
-        if (randomNumber >= 0 && randomNumber < 0.33){
-            ComputerMove = 'Rock';
-        } else if (randomNumber >= 0.33 && randomNumber < 0.66){
-            ComputerMove = 'Paper';
-        } else {
-            ComputerMove = 'Scissors';
-        }
-        // - - |- - |- -|
-        //  R    P    S
-        // 0 .33  .66   1
-        console.log(ComputerMove)
+       const ComputerMove1= (pickComputerMove());
+
         let result = '' ;
         if(ComputerMove ==='Rock'){
             result = 'Tie,';
@@ -38,19 +26,11 @@
     ">Rock</button>
     <button onclick = "
     randomNumber = Math.random();
-        let ComputerMove1 = '';
-        // generates a random number between 0 and 1
-        if (randomNumber >= 0 && randomNumber < 0.33){
-            ComputerMove = 'Rock';
-        } else if (randomNumber >= 0.33 && randomNumber < 0.66){
-            ComputerMove = 'Paper';
-        } else {
-            ComputerMove = 'Scissors';
-        }
+        pickComputerMove();
         // - - |- - |- -|
         //  R    P    S
         // 0 .33  .66   1
-        console.log(ComputerMove)
+        // console.log(ComputerMove)
         let result1 = '' ;
         if(ComputerMove ==='Rock'){
             result = 'You Lose';
@@ -70,20 +50,13 @@
     
     ">Paper</button>
     <button onclick=" 
-        randomNumber = Math.random();
-        let ComputerMove2 = '';
-        // generates a random number between 0 and 1
-        if (randomNumber >= 0 && randomNumber < 0.33){
-            ComputerMove = 'Rock';
-        } else if (randomNumber >= 0.33 && randomNumber < 0.66){
-            ComputerMove = 'Paper';
-        } else {
-            ComputerMove = 'Scissors';
-        }
+
+     pickComputerMove();
+        
         // - - |- - |- -|
         //  R    P    S
         // 0 .33  .66   1
-        console.log(ComputerMove)
+        // console.log(ComputerMove)
         let result2 = '' ;
         if(ComputerMove ==='Rock'){
             result = 'You Lose';
@@ -105,7 +78,29 @@
     <p><a href=>Click here 
     </a> <span>to see the final version of the project</span></p>
     
+    <script>
+        let ComputerMove = '';
 
-    <script></script>
+        function pickComputerMove(){
+            const randomNumber = Math.random();
+    
+        // generates a random number between 0 and 1
+            if (randomNumber >= 0 && randomNumber < 0.33){
+                ComputerMove = 'Rock';
+            } else if (randomNumber >= 0.33 && randomNumber < 0.66){
+                ComputerMove = 'Paper';
+            } else {
+                ComputerMove = 'Scissors';
+            }
+            
+        // - - |- - |- -|
+        //  R    P    S
+        // 0 .33  .66   1
+      
+            return ComputerMove;
+
+      
+        }
+    </script>
 </body>
 </html>
