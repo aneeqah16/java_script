@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // what is an object?
+        // An object groups multiple values together
+        const product = {
+            name : "socks",
+            price : 1090
+        };
+        // name and price here, are property
+    
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+        // change the value of the property:
+        console.log(product.name) // socks
+        product.name = 'bear',
+        console.log(product.name) // bear
+        // add a property that does not exists:
+        product.newProperty = true;
+        console.log(product);
+
+        // delete a property:
+        delete product.newProperty;
+        console.log(product);
+        console.log( typeof product);
+
+
+        // why do we use objects?
+        // - makes our code more organized 
+        // - allows us to use multiple values together
+        
+
+    </script>
+</body>
+</html>
