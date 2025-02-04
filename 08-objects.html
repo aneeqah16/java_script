@@ -36,6 +36,116 @@
         // - makes our code more organized 
         // - allows us to use multiple values together
         
+       const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        rating: {
+            stars:4.5,
+            count: 87
+        },
+        fun: function function1(){
+            console.log("Function inside the object");
+        }
+        // Function inside the object = Method
+       };
+       console.log(product2);
+       console.log(product2.name);
+    // another way: bracket notation 
+       console.log(product2['name'])
+    //    barcket notation lets us use properties that dont work with dot notation
+    // console.log(product2.delivery-time) will give and error
+    // instead:
+    console.log(product2['delivery-time'])
+
+
+    console.log(product2.rating.count);
+    product2.fun();
+    // type of console = object
+       /*
+    type of console.log = method
+
+    object + function = method
+JSON builtin object
+JSON stands for JavaScript Object Notation
+- JSON is similar to javaScript object but with less features
+- JSON syntax is more useful
+when do we use JSON ?
+-when we send data between computers
+-when we store data
+*/
+
+// what is JSON object:
+// helps us convert JavaScript object to JSON 
+
+    console.log(JSON.stringify(product2))
+    console.log(typeof JSON.stringify(product2)) // string
+    // how to convert JSON to JavaScript object?
+    // by using JSON.parse()
+    console.log(JSON.parse(JSON.stringify(product2)));
+
+    // local storage 
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase())
+    // how can strings have properties and methods
+    // the answer is that the javascript has the special method called as auto boxing
+    // js automatically wraps the string in a special obj first and this object has the special method called length and toUpperCase() and this is done automatatically
+    // auto boxing works with numbers and booleans as well but does not work with null and undefined 
+
+
+    // Note: objects are references
+    const obj1 = {
+        message : 'hello'
+    };
+
+    const obj2 = obj1; // here also we are not copying the reference of obj1 we are copying the reference of obj1 to obj2, they just have the same reference in the memory
+    // this does'nt make the copy of the object. It just makes the copy of the reference  that points to the object
+    // and this is called copy by reference 
+    obj2.message = 'world';
+    console.log(obj1)
+    // here we are able to change the message property even though we created obj1 with 'const' and that's because the obj1 variable that stores the reference that points to the obj 
+    // so const prevents us form changing the refrence of the variable but it does'nt prevent us from reaching into the reference and chaning the reference that it's pointing to 
+    console.log(obj2)
+    // also changed because both are pointing to the same reference
+
+    const obj3 = {
+        message : 'world'
+    };
+
+    console.log(obj3 === obj1);// false 
+    // because it only compares the references not the value inside
+    console.log(obj3.message === obj1.message); // true
+
+//  shortcut for the objects:
+    const obj4 = {
+        message : "Good Job",
+        price : 799
+    };
+
+    // const message = obj4.message
+    // if the variable name and the property name are the same, shortcut for that:
+    const{message,price} = obj4;
+    // this is called destructuring
+    console.log(message);
+    console.log(price);
+
+    const obj5 = {
+        
+        // message : message
+        message,
+        // method: function function1() {
+        //     console.log('method');
+        // }
+        // shortcut or the above method, here name is not needed
+        method(){
+            console.log('method')
+        }
+    }
+    // here we are trying to assign the value of message to the property message of obj5
+console.log(obj5);
+obj5.method();
+
+
 
     </script>
 </body>
