@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors</title>
+</head>
+<body>
+    <h3>Rock Paper Scissors</h3>
+
+    <button onclick = "
+       const ComputerMove1= (pickComputerMove());
+       playGame('Rock')   
+    ">Rock</button>
+    <button onclick = "
+    
+     ComputerMove1 = (pickComputerMove());
+     playGame('Paper')        
+    ">Paper</button>
+    <button onclick=" 
+
+     computerMove1 = pickComputerMove();
+     playGame('Scissors');
+    ">Scissors</button>
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class = "js-score"></p>
+
+    <button onclick = "score.losses = 0,score.ties = 0,score.wins = 0; localStorage.removeItem('score'); updateScoreElement();
+    
+    ">Reset Score</button>
+    <p><a href=>Click here 
+    </a> <span>to see the final version of the project</span></p>
+    
+    <script>
+        let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, ties: 0, losses: 0 };
+       
+
+        updateScoreElement();
+        
+        // console.log(JSON.parse(localStorage.getItem('score')))
+        function playGame(playerMove){
+            const computerMove = pickComputerMove();
+            let result = '' ;
+            
+            if (playerMove === 'Rock'){
+           
+                if(ComputerMove ==='Rock'){
+                    result = 'Tie.';
+                }else if(ComputerMove === 'Paper') {
+                    result = 'You Lose';
+
+                }else if(ComputerMove === 'Scissors'){
+                    result = 'You Win';
+                    }
+            }else if (playerMove == 'Paper'){
+                if(ComputerMove ==='Rock'){
+                    result = 'You Win';
+                }else if(ComputerMove === 'Paper') {
+                    result = 'Tie.';
+
+                }else if(ComputerMove === 'Scissors'){
+                    result = 'You Lose';
+                    }
+            }else{
+                if(ComputerMove ==='Rock'){
+                    result = 'You Lose';
+                }else if(ComputerMove === 'Paper') {
+                    result = 'You Win';
+
+                }else if(ComputerMove === 'Scissors'){
+                    result = 'Tie.';
+                    }
+            }
+            if(result === 'You Win'){
+                score.wins++;
+            }else if (result === 'You Lose'){
+                score.losses++;
+            }else{
+                score.ties++;
+            }
+            localStorage.setItem('score',JSON.stringify(score)) // this will convert the javascript obj into a stirng
+            // localstorage only supports strings, 
+            // so we need to convert the object to the string
+            updateScoreElement();
+
+
+
+            // alert(`You picked ${playerMove}. Computer picked ${ComputerMove}. ${result}.\nWins: ${score.wins}\nLosses: ${score.losses}\nTies: ${score.ties}`);
+            document.querySelector('.js-result').innerHTML = result
+            element = document.querySelector('.js-moves');
+            element.innerHTML =`You ${playerMove} - ${computerMove} Computer`;
+
+            }
+        let ComputerMove = '';
+
+        function pickComputerMove(){
+            const randomNumber = Math.random();
+    
+        // generates a random number between 0 and 1
+            if (randomNumber >= 0 && randomNumber < 0.33){
+                ComputerMove = 'Rock';
+            } else if (randomNumber >= 0.33 && randomNumber < 0.66){
+                ComputerMove = 'Paper';
+            } else {
+                ComputerMove = 'Scissors';
+            }
+        //  concetp:    
+        // - - |- - |- -|
+        //  R    P    S
+        // 0 .33  .66   1
+      
+            return ComputerMove;
+
+      
+        }
+
+        function updateScoreElement(){
+            document.querySelector('.js-score')
+                .innerHTML = `Wins: ${score.wins}    Losses: ${score.losses}     Ties: ${score.ties}`;
+        }
+    </script>
+</body>
+</html>

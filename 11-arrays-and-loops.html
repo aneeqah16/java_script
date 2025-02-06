@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <script>
+        /*
+        // Array is the list of values 
+        const myArray = [10,20,30];
+        console.log(myArray)
+
+        // console.log(myArray[0]);
+        console.log(myArray[1]);
+        myArray[0] = 99;
+        console.log(myArray);
+        console.log(Array.isArray([1,2,]));
+        console.log(myArray.length);
+        // .push():Adds a value to the end of the array
+        myArray.push(100);
+        console.log(myArray);
+        // .splice : remove the value form an array.
+        myArray.splice(0,1);
+        // the first number is the index that we want to remove
+        // the second number is teh number of values to remove
+        console.log(myArray);
+
+        */
+        // loops : repeating something again and again
+        
+        let i = 1;
+        while(i<=10){
+            console.log(i);
+            i++;
+        }
+
+        for(let i = 1; i <= 10; i++){
+            console.log(i);
+        }
+
+        let randomNumber = 0;
+        while(randomNumber< 0.5){
+            randomNumber = Math.random();
+        }
+        console.log(randomNumber);
+
+        // looping through an array:
+        const todoList = ["make dinner", "watch youtube","wash dishes"]
+        for(let i = 0; i < todoList.length; i++){
+            console.log(todoList[i]);
+        }
+    </script>
+</body>
+</html>

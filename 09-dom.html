@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>Hello</button>
+    <button class = "js-button">SEcond button</button>
+    <script>
+        // DOM is another builtin object called "document object"
+        // document.body.innerHTML = 'hello';
+        // it will remove all the content of the page and replace it with html
+        // here document is a built-in object and body is a property of document object called body.Body is also an object and innerHTML is the property of body object
+
+        // document.title = 'Good Job!';
+        // form these examples, it shows us that the document object represents / models the webpage 
+
+        // and we can access and manipulate the webpage using the document object
+
+        // - document.title
+        // console.log(document.title);
+        // document.title  = 'Changed';
+        // linked to the title of the webpage, we use it to access and change the title of the webpage 
+
+        // - document.body
+        // console.log(document.body);
+        // important feature of the javascript that we can have HTML elements inside JS
+        // The DOM combines js and html together
+        /* NOTE:
+        when the html element such as body is inside js, the html element is converted into the js object
+        */
+    //    console.log(typeof document.body);
+    //    like other objects, document.body has properties and methods
+    // console.log(document.body.innerHTML);
+    // document.body.innerHTML = '<button> Good Job! </button>';
+    // method : function saved inside an object
+    //  - document.querySelector: lets us get any element form the page and put it inside js
+    console.log(document.querySelector('button').innerHTML)
+    document.querySelector('button').innerHTML = 'Changed';
+   const buttonElement = document.querySelector('.js-button');
+    document.querySelector('.js-button').innerHTML= 'new button';
+    console.log(buttonElement);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

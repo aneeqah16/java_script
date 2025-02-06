@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+
+        body{
+        font-family : Arial;
+       }
+        .subscribe-button{
+            border-radius: 50px;  
+            background-color: #000;
+            color: #fff;
+            border : none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom : 30px;
+            
+            
+            /* property value pair */
+        }
+        .is-subscribed{
+            border-radius: 50px;  
+            background-color: rgba(240, 240, 240);
+            color:rgb(24, 22, 22);
+            border : none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cost-input{
+            font-size : 15px;
+            padding : 10px;
+        }
+       .calculation{
+        font-size : 15px;
+        padding : 10px;
+        background-color: green;
+        color: white;
+        border: none;
+       }
+    </style>
+</head>
+<body>
+    <h4>YouTube Subscribe Button</h4>
+    <button class="js-sub-button subscribe-button"  onclick = "subscribe();">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of order" id ="cost" class="js-cost-input cost-input" onkeydown="handleCostKeydown(event);">
+    <button onclick = "
+     calculateTotal();
+    "class = 'calculation' onkeydown = >Calculate</button>
+    <!-- clicks,keydowns =>events -->
+    <!-- conclick,onkeydown => event listeners  -->
+    <p class="js-total-cost"></p>
+
+    <script>
+
+        // String(25)
+        // console.log('25'- 5)
+        // if a string only contains a number, and we -/*, it will be converted into a number
+        // while it concatinates the two numbers in case of +
+        // window.document
+        // window represents the browsers
+        // window.console.log('window');
+        // window.alert("Hello Aneeqah Ashraf")
+       function handleCostKeydown(event){
+        // onkeydown="console.log(event.key);
+        if (event.key === 'Enter'){
+            calculateTotal();
+    }
+       }
+        
+
+        function calculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = inputElement.value;
+            
+            // checking if the cost is less than 40
+            if(cost<40){
+                cost = Number(cost) + 10
+                // the value from the DOM, is always a string
+            }
+            
+            document.querySelector('.js-total-cost').innerHTML  = `$${cost}`;
+
+        
+        }
+        
+
+        
+        
+       function subscribe(){
+        
+            const buttonElement = document.querySelector('.js-sub-button');
+            
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerText = 'Subscribed';
+                buttonElement.classList.add('is-subscribed')
+            } else {
+                buttonElement.innerText = 'Subscribe';
+                buttonElement.classList.remove("is-subscribed");
+            }
+        ;
+       }
+    </script>
+</body>
+</html>
